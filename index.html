@@ -54,16 +54,16 @@
         }
 
         .receive-text {
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 10px;
-            opacity: 0.95;
-            font-weight: normal;
+            opacity: 0.9;
+            font-weight: 300; /* 文字を細めに設定 */
         }
 
-        /* 金額 */
+        /* 金額（太すぎずスッキリした太さに調整） */
         .amount {
-            font-size: 44px;
-            font-weight: 800;
+            font-size: 42px;
+            font-weight: 600; 
             margin-bottom: 35px;
             letter-spacing: 1px;
         }
@@ -75,8 +75,8 @@
             border: none;
             border-radius: 8px;
             padding: 18px 40px;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 17px;
+            font-weight: 600; /* ボタンの文字も少しすっきりさせる */
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,200,83,0.4);
             transition: all 0.2s;
@@ -98,16 +98,17 @@
             margin-top: auto;
         }
 
-        /* テキスト行（項目名と値） */
+        /* テキスト行 */
         .detail-row {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 10px;
-            opacity: 0.9;
+            opacity: 0.85;
+            font-weight: 300; /* 詳細の文字も細く */
         }
         .detail-row span:last-child {
-            font-weight: bold;
+            font-weight: 500; /* 値の部分は少しだけメリハリをつける */
         }
 
         .detail-divider {
@@ -117,8 +118,8 @@
         }
         
         .detail-line {
-            height: 10px;
-            background: rgba(255, 255, 255, 0.4);
+            height: 8px;
+            background: rgba(255, 255, 255, 0.35);
             border-radius: 4px;
             margin-bottom: 10px;
         }
@@ -137,7 +138,7 @@
             </svg>
         </div>
 
-        <div class="receive-text">大和から受け取り</div>
+        <div class="receive-text">ペイ太郎さんから受け取り</div>
         <div class="amount">10,000円</div>
 
         <button class="complete-btn" onclick="alert('受け取りが完了しました！');">受け取り完了</button>
@@ -145,11 +146,11 @@
         <!-- 下部の詳細カード -->
         <div class="detail-card">
             <div class="detail-row">
-                <span>送信日</span>
+                <span>取引日時</span>
                 <span>2026年10月4日</span>
             </div>
             <div class="detail-row">
-                <span>有効期限</span>
+                <span>入金予定日</span>
                 <span>2026年10月8日</span>
             </div>
             <div class="detail-divider"></div>
