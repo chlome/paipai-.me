@@ -9,8 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* 少し落ち着いた背景色に変更 */
-            /* フォントを一般的なシステムフォントに変更（丸文字を解除） */
+            background-color: #f5f5f5;
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             display: flex;
             justify-content: center;
@@ -29,7 +28,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50px 20px; /* 上下の余白を少し調整 */
+            padding: 50px 20px;
             box-sizing: border-box;
             color: white;
             position: relative;
@@ -38,7 +37,7 @@
 
         /* ユーザーアイコン */
         .user-icon {
-            width: 70px; /* 少し大きく */
+            width: 70px;
             height: 70px;
             background-color: #ffffff;
             border-radius: 50%;
@@ -51,7 +50,7 @@
         .user-icon svg {
             width: 40px;
             height: 40px;
-            fill: #555555; /* アイコンの色を濃いグレーに変更 */
+            fill: #555555;
         }
 
         .receive-text {
@@ -64,7 +63,7 @@
         /* 金額 */
         .amount {
             font-size: 44px;
-            font-weight: 800; /* 文字を太く、はっきりと */
+            font-weight: 800;
             margin-bottom: 35px;
             letter-spacing: 1px;
         }
@@ -74,7 +73,6 @@
             background-color: #00c853;
             color: white;
             border: none;
-            /* 角丸を少し緩やかに */
             border-radius: 8px;
             padding: 18px 40px;
             font-size: 18px;
@@ -82,67 +80,79 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,200,83,0.4);
             transition: all 0.2s;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             width: 85%;
         }
         .complete-btn:hover {
-            background-color: #00e676; /* ホバー時の色を少し明るく */
-            transform: translateY(-2px); /* 浮き上がるアニメーションを追加 */
+            background-color: #00e676;
+            transform: translateY(-2px);
         }
 
         /* 下部の詳細カード */
         .detail-card {
             width: 100%;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.12);
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
             box-sizing: border-box;
             margin-top: auto;
         }
-        .detail-line {
-            height: 12px;
-            background: rgba(255, 255, 255, 0.5); /* 線を少し見やすく */
-            border-radius: 4px;
-            margin-bottom: 15px;
+
+        /* テキスト行（項目名と値） */
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.9;
         }
-        .detail-line:last-child {
-            margin-bottom: 0;
+        .detail-row span:last-child {
+            font-weight: bold;
         }
-        .detail-line.short {
-            width: 45%;
-        }
-        .detail-line.medium {
-            width: 75%;
-        }
+
         .detail-divider {
             height: 1px;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.25);
+            margin: 15px 0;
+        }
+        
+        .detail-line {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .detail-line.short {
+            width: 40%;
         }
     </style>
 </head>
 <body>
 
     <div class="phone-screen">
-        <!-- ユーザーアイコン（簡易SVG） -->
+        <!-- ユーザーアイコン -->
         <div class="user-icon">
             <svg viewBox="0 0 24 24">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
             </svg>
         </div>
 
-        <div class="receive-text">大和さんから受け取る</div>
+        <div class="receive-text">大和から受け取り</div>
         <div class="amount">10,000円</div>
 
         <button class="complete-btn" onclick="alert('受け取りが完了しました！');">受け取り完了</button>
 
-        <!-- 下部のレシート・詳細風デザイン -->
+        <!-- 下部の詳細カード -->
         <div class="detail-card">
-            <div class="detail-line short"></div>
-            <div class="detail-line medium"></div>
-            <div class="detail-line medium"></div>
+            <div class="detail-row">
+                <span>送信日</span>
+                <span>2026年10月4日</span>
+            </div>
+            <div class="detail-row">
+                <span>有効期限</span>
+                <span>2026年10月8日</span>
+            </div>
             <div class="detail-divider"></div>
-            <div class="detail-line medium"></div>
             <div class="detail-line short"></div>
         </div>
     </div>
