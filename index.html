@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お支払い・受け取り画面</title>
     <style>
+        /* 基本設定 */
         body {
             margin: 0;
             padding: 0;
-            background-color: #333;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f5f5; /* 少し落ち着いた背景色に変更 */
+            /* フォントを一般的なシステムフォントに変更（丸文字を解除） */
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
+
         /* スマホの画面枠 */
         .phone-screen {
             width: 100%;
@@ -22,89 +25,99 @@
             height: 700px;
             background: linear-gradient(135deg, #ff7e79 0%, #ff5252 100%);
             border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 50px 20px; /* 上下の余白を少し調整 */
             box-sizing: border-box;
             color: white;
             position: relative;
             overflow: hidden;
         }
+
         /* ユーザーアイコン */
         .user-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px; /* 少し大きく */
+            height: 70px;
             background-color: #ffffff;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .user-icon svg {
-            width: 35px;
-            height: 35px;
-            fill: #00bcd4;
+            width: 40px;
+            height: 40px;
+            fill: #555555; /* アイコンの色を濃いグレーに変更 */
         }
+
         .receive-text {
             font-size: 16px;
             margin-bottom: 10px;
-            opacity: 0.9;
+            opacity: 0.95;
+            font-weight: normal;
         }
+
         /* 金額 */
         .amount {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 30px;
+            font-size: 44px;
+            font-weight: 800; /* 文字を太く、はっきりと */
+            margin-bottom: 35px;
             letter-spacing: 1px;
         }
+
         /* 完了ボタン */
         .complete-btn {
             background-color: #00c853;
             color: white;
             border: none;
-            border-radius: 30px;
-            padding: 15px 40px;
+            /* 角丸を少し緩やかに */
+            border-radius: 8px;
+            padding: 18px 40px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,200,83,0.4);
-            transition: 0.2s;
-            margin-bottom: 30px;
-            width: 80%;
+            transition: all 0.2s;
+            margin-bottom: 40px;
+            width: 85%;
         }
         .complete-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+            background-color: #00e676; /* ホバー時の色を少し明るく */
+            transform: translateY(-2px); /* 浮き上がるアニメーションを追加 */
         }
+
         /* 下部の詳細カード */
         .detail-card {
             width: 100%;
-            background: rgba(0, 0, 0, 0.15);
-            border-radius: 20px;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
             box-sizing: border-box;
             margin-top: auto;
         }
         .detail-line {
-            height: 10px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-            margin-bottom: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5); /* 線を少し見やすく */
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .detail-line:last-child {
+            margin-bottom: 0;
         }
         .detail-line.short {
-            width: 40%;
+            width: 45%;
         }
         .detail-line.medium {
-            width: 70%;
+            width: 75%;
         }
         .detail-divider {
             height: 1px;
-            background: rgba(255, 255, 255, 0.2);
-            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -118,7 +131,7 @@
             </svg>
         </div>
 
-        <div class="receive-text">やまとから受け取り</div>
+        <div class="receive-text">大和さんから受け取る</div>
         <div class="amount">10,000円</div>
 
         <button class="complete-btn" onclick="alert('受け取りが完了しました！');">受け取り完了</button>
